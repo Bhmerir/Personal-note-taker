@@ -20,4 +20,17 @@ const readAndAppend = (content, file) => {
   });
 };
 
-module.exports = { readFromFile, writeToFile, readAndAppend };
+const readAndDelete = (deletedId, file) => {
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      const dataWithoutDeleteId = parsedData.filter(note => note.id !== deletedId)
+      console.log(dataWithoutDeleteId)
+      writeToFile(file, dataWithoutDeleteId);
+    }
+  });
+};
+
+module.exports = { readFromFile, writeToFile, readAndAppend, readAndDelete };
