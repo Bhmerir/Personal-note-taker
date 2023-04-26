@@ -1,0 +1,23 @@
+{
+  "name": "personal-note-taker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhmerir/Personal-note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Bhmerir/Personal-note-taker/issues"
+  },
+  "homepage": "https://github.com/Bhmerir/Personal-note-taker#readme"
+}
