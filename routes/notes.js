@@ -25,7 +25,7 @@ notes.post('/', (req, res) => {
     readAndAppend(newNote, './db/db.json');
     //Then we read again the file and send it back to the client in order to be shown in page
     readFromFile('./db/db.json').then((data) => {
-         res.json(JSON.parse(data))
+        res.json(JSON.parse(data))
     })
 });
 
