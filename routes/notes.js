@@ -1,6 +1,6 @@
 const notes = require('express').Router();
 const { readFromFile, readAndAppend, readAndDelete, writeToFile } = require('../helpers/fsUtils');
-const uuid = require('../helpers/uuid');
+const {v4: uuidv4} = require('uuid');
 
 // GET Route for retrieving all the notes
 notes.get('/', (req, res) => {
@@ -13,13 +13,13 @@ notes.get('/', (req, res) => {
     })
 });
 
-// Post Route for writing new notes and updating the existing note
+// Post Route for writing new notes, it adds a unique id to each note.This id is produced by package of uuid
 notes.post('/', (req, res) => {
     const {title, text} = req.body;
     const newNote = {
         title,
         text,
-        id: uuid()
+        id: uuidv4()
     }
     //This function reads our array from db.json file and push a new note in it and write this changed array in our file
     readAndAppend(newNote, './db/db.json');

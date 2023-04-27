@@ -29,10 +29,20 @@ In order to achieve this goal, I took the following steps:
 
 <br>
 
+## Mock-Up
+---
+
+![personal-note-taker.gif](./public/assets/image/personal-note-taker.gif)
+
+<br>
+
 ## Table of Contents
+
 ---
 
 * [Description](#description)
+
+* [Mock-Up](#mock-up)
 
 * [Installation](#installation)
 
@@ -96,6 +106,7 @@ This is a link to a video which instructs the users on how to work with software
 | HTML                    |
 | CSS                     |
 | Bootstap                |
+| uuid NPM Package        |
 
 <br>
 
