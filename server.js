@@ -10,12 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-})
-
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
+
+/*The purpose of putting '*' instead of '/' is that if the user changes the URL manually to any routes that we haven't 
+declared, server will take the application to the home page instead of giving an error*/
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+})
 
 app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`))

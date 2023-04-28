@@ -5,7 +5,7 @@ const {v4: uuidv4} = require('uuid');
 // GET Route for retrieving all the notes
 notes.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => {
-        res.json(JSON.parse(data))
+        res.json(JSON.parse(data));
     }).catch(error=>{
         /*If there was not any db.json file , it makes one and put an empty array inside it, and if the file exists
         but it is empty, it adds an empty array to it. Then we can push our notes inside that array*/
@@ -25,7 +25,10 @@ notes.post('/', (req, res) => {
     readAndAppend(newNote, './db/db.json');
     //Then we read again the file and send it back to the client in order to be shown in page
     readFromFile('./db/db.json').then((data) => {
-        res.json(JSON.parse(data))
+        res.json(JSON.parse(data));
+    }).catch(error=>{
+        console.log(error);
+        return res.status(500).end();
     })
 });
 
@@ -33,7 +36,10 @@ notes.delete('/:id', (req, res) => {
     const {id} = req.params;
     readAndDelete(id, './db/db.json');
     readFromFile('./db/db.json').then((data) => {
-        res.json(JSON.parse(data))
+        res.json(JSON.parse(data));
+    }).catch(error=>{
+        console.log(error);
+        return res.status(500).end();
     })
 });
 
