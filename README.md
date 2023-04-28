@@ -88,7 +88,7 @@ This is a link to a video which instructs the users on how to work with software
 
 ---
 
-[Link of Deployed App in Heroku](https://user-friendly-note-taker.herokuapp.com/notes)
+[Link of Deployed App in Heroku](https://user-friendly-note-taker.herokuapp.com)
 
 [Link of its GitHub Repository](https://github.com/Bhmerir/Personal-note-taker)
 
